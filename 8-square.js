@@ -14,7 +14,7 @@ const squareSize = parseInt(userArgs[0]);
 
 if (!isNaN(squareSize)) {
     for (let i = 0; i < squareSize; i++) {
-        console.log('x'.repeat(squareSize));
+        console.log('X'.repeat(squareSize));
     }
 
 } else {

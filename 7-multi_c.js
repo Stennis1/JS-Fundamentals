@@ -12,7 +12,7 @@ const { argv } = require(`node:process`);
 const userArgs = argv.slice(2);
 const count = parseInt(userArgs[0]);
 
-if (!isNaN(count)) {
+if (!isNaN(count) && count > 0) {
     let i = 0;
     let output = "";
 
@@ -21,6 +21,8 @@ if (!isNaN(count)) {
         i++
     }    
     console.log(output.trim());
+
+} else if (!isNaN(count) && count <= 0) { 
 
 } else {
     console.log("Missing number of occurrences");
