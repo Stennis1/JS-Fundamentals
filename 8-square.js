@@ -8,10 +8,15 @@
 //     You must use a loop (while, for, etc.)
 
 const { argv } = require(`node:process`);
-let userArgs = argv.length;
+let userArgs = argv.slice(2);
 
+const squareSize = parseInt(userArgs[0]);
 
+if (!isNaN(squareSize)) {
+    for (let i = 0; i < squareSize; i++) {
+        console.log('x'.repeat(squareSize));
+    }
 
-// for () {
-
-// }
+} else {
+    console.log("Missing size");
+}

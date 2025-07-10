@@ -9,17 +9,19 @@
 
 const { argv } = require(`node:process`);
 
-let userArgs = argv.slice(2);
-let userVariable = "C is fun";
-
-let count = parseInt(userArgs[0]);
-let output = '';
+const userArgs = argv.slice(2);
+const count = parseInt(userArgs[0]);
 
 if (!isNaN(count)) {
-    for (let i = 0; i < count; i++) {
+    let i = 0;
+    let output = "";
+
+    while (i < count) {
         output += "C is fun\n";
-    }
+        i++
+    }    
     console.log(output.trim());
+
 } else {
-    console.log("Missing number of occurences");
+    console.log("Missing number of occurrences");
 }

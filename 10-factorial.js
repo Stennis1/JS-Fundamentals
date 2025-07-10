@@ -1,23 +1,28 @@
-// 3. Value of my argument - Not allowed to use length 
+// Write a script that computes and prints a factorial
 
-// 7. I love C
-
-
-// Correct output - -3 times
-
-//     [Got]
-
-
-//     (1 chars long)
-//     [stderr]: 
-//     (0 chars long)
-//     [Expected]
-
-//     (0 chars long)
-//     [stderr]: [Anything]
-//     (0 chars long)
+//     The first argument is integer (argument can be cast as integer) used for computing the factorial
+//     Factorial of NaN is 1
+//     You must do it recursively
+//     You must use a function
+//     You must use console.log(...) to print all output
+//     You are not allowed to use var
 
 
-// Project 8
+const { argv }= require(`node:process`);
+const userArgs = argv.slice(2);
 
-// Project 10
+const num = parseInt(userArgs[0]);
+
+function factorial(n) {
+    if (isNaN(n)) {
+        return 1;
+    } 
+    
+    if (n <= 1) {
+        return 1;
+    }
+    
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(num));
